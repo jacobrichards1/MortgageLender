@@ -1,18 +1,23 @@
 package mortgageLender;
 
+
+import java.util.Date;
+
 public class Loan {
 	
-	private int loan_id;
 	private int requestedAmount;
 	private int dti;
 	private int credit_score;
 	private int savings;
 	private int qualification;
 	private int loanAmount;
-	private boolean status;
+	private boolean customerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot;
+	private String status;
+	private Date loanDate;
+	private Date acceptedDate = java.util.Calendar.getInstance().getTime();
 	
-	public Loan(int loan_id, int requestedAmount, int dti, int credit_score, int savings, int qualification, int loanAmount,
-			boolean status) {
+	public Loan(int requestedAmount, int dti, int credit_score, int savings, int qualification, int loanAmount,
+			String status) {
 		super();
 		this.requestedAmount = requestedAmount;
 		this.dti = dti;
@@ -23,24 +28,15 @@ public class Loan {
 		this.status = status;
 	}
 	
-	public Loan(int requestedAmount, int dti, int credit_score, int savings) {
+	public Loan(int requestedAmount, int dti, int credit_score, int savings, Date loanDate) {
 		super();
 		this.requestedAmount = requestedAmount;
 		this.dti = dti;
 		this.credit_score = credit_score;
 		this.savings = savings;
+		this.loanDate = loanDate;
 	}
 	
-	
-
-
-	public int getLoan_id() {
-		return loan_id;
-	}
-
-	public void setLoan_id(int loan_id) {
-		this.loan_id = loan_id;
-	}
 
 	public int getRequestedAmount() {
 		return requestedAmount;
@@ -78,11 +74,36 @@ public class Loan {
 	public void setLoanAmount(int loanAmount) {
 		this.loanAmount = loanAmount;
 	}
-	public boolean isStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public boolean getCustomerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot() {
+		return customerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot;
+	}
+
+	public void setCustomerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot(
+			boolean customerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot) {
+		this.customerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot = customerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot;
+	}
+
+	public Date getLoanDate() {
+		return loanDate;
+	}
+
+	public void setLoanDate(Date loanDate) {
+		this.loanDate = loanDate;
+	}
+
+	public Date getAcceptedDate() {
+		return acceptedDate;
+	}
+
+	public void setAcceptedDate(Date acceptedDate) {
+		this.acceptedDate = acceptedDate;
 	}
 	
 	

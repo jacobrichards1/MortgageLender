@@ -5,8 +5,10 @@ import java.util.List;
 public class Lender {
 	
 	private int availableFunds = 0;
+	private int pendingFunds = 0;
+	
 	private List<Loan> curLoans;
-	private List<Loan> onHoldLoans;
+	
 	
 	public Lender() {
 		super();
@@ -28,6 +30,14 @@ public class Lender {
 	}
 	public void setCurLoans(List<Loan> curLoans) {
 		this.curLoans = curLoans;
+	}
+	
+	public int getPendingFunds() {
+		return pendingFunds;
+	}
+
+	public void setPendingFunds(int pendingFunds) {
+		this.pendingFunds = pendingFunds;
 	}
 	
 	
