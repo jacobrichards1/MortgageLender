@@ -1,10 +1,13 @@
 package mortgageLender;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Loan {
 	
+	private int loanID;
 	private int requestedAmount;
 	private int dti;
 	private int credit_score;
@@ -14,7 +17,8 @@ public class Loan {
 	private boolean customerResponseToTheQuestionOfWouldTheyLikeTheLoanOrNot;
 	private String status;
 	private Date loanDate;
-	private Date acceptedDate = java.util.Calendar.getInstance().getTime();
+	SimpleDateFormat form = new SimpleDateFormat("MM-dd-yyyy");
+	private Date acceptedDate;
 	
 	public Loan(int requestedAmount, int dti, int credit_score, int savings, int qualification, int loanAmount,
 			String status) {
@@ -26,17 +30,38 @@ public class Loan {
 		this.qualification = qualification;
 		this.loanAmount = loanAmount;
 		this.status = status;
+		try {
+			this.acceptedDate =   form.parse("10-6-2021");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	public Loan(int requestedAmount, int dti, int credit_score, int savings, Date loanDate) {
+	public Loan(int loanID, int requestedAmount, int dti, int credit_score, int savings, Date loanDate) {
 		super();
+		this.loanID = loanID;
 		this.requestedAmount = requestedAmount;
 		this.dti = dti;
 		this.credit_score = credit_score;
 		this.savings = savings;
 		this.loanDate = loanDate;
+		try {
+			this.acceptedDate =   form.parse("10-6-2021");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
+
+	public int getLoanID() {
+		return loanID;
+	}
+
+	public void setLoanID(int loanID) {
+		this.loanID = loanID;
+	}
 
 	public int getRequestedAmount() {
 		return requestedAmount;
