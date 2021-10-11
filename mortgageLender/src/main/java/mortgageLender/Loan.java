@@ -21,7 +21,7 @@ public class Loan {
 	private Date acceptedDate;
 	
 	public Loan(int requestedAmount, int dti, int credit_score, int savings, int qualification, int loanAmount,
-			String status) {
+			String status) { //With qualification, loanAmount, status
 		super();
 		this.requestedAmount = requestedAmount;
 		this.dti = dti;
@@ -38,7 +38,7 @@ public class Loan {
 		}
 	}
 	
-	public Loan(int loanID, int requestedAmount, int dti, int credit_score, int savings, Date loanDate) {
+	public Loan(int loanID, int requestedAmount, int dti, int credit_score, int savings, Date loanDate) {  //With loanID and loanDate
 		super();
 		this.loanID = loanID;
 		this.requestedAmount = requestedAmount;
@@ -54,7 +54,8 @@ public class Loan {
 		}
 	}
 	
-
+	//Setters and Getters
+	
 	public int getLoanID() {
 		return loanID;
 	}
