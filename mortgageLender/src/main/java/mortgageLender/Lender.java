@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Lender {
 	
-	private int availableFunds = 0;
-	private int pendingFunds = 0;
+	private int availableFunds = 0; //Funds that are available to give out
+	private int pendingFunds = 0;  //Funds that have been approved by the lender and are waiting for customer's acceptance
 	
 	private List<Loan> curLoans;
 	
@@ -18,6 +18,8 @@ public class Lender {
 		super();
 		this.availableFunds = availableFunds;
 	}
+	
+	//Setters and Getters
 	
 	public int getAvailableFunds() {
 		return availableFunds;
